@@ -154,7 +154,7 @@ func (si *SysInfo) getNetworkInfo() {
 
 		// get IP Address(es) of interface
 		inet, _ := net.InterfaceByName(link.Name())
-		ip_addrs, _ := getIPAddrByInterface(inet)
+		ipAddrs, _ := getIPAddrByInterface(inet)
 
 		speed := readIfaceSpeed(path.Join(fullpath, "speed"))
 		if speed == 0 {
@@ -164,7 +164,7 @@ func (si *SysInfo) getNetworkInfo() {
 		device := NetworkDevice{
 			Name:       link.Name(),
 			MACAddress: slurpFile(path.Join(fullpath, "address")),
-			IPAddress:  ip_addrs,
+			IPAddress:  ipAddrs,
 			Port:       getPortType(supp),
 			Speed:      speed,
 			MTU:        inet.MTU,
@@ -179,13 +179,13 @@ func (si *SysInfo) getNetworkInfo() {
 }
 
 func getIPAddrByInterface(inet *net.Interface) ([]string, error) {
-	ip_addrs := make([]string, 0)
+	ipAddrs := make([]string, 0)
 	addrs, err := inet.Addrs()
 	if err != nil {
-		return ip_addrs, err
+		return ipAddrs, err
 	}
 	for _, addr := range addrs {
-		ip_addrs = append(ip_addrs, addr.String())
+		ipAddrs = append(ipAddrs, addr.String())
 	}
-	return ip_addrs, err
+	return ipAddrs, err
 }

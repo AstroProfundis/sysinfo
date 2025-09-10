@@ -1,7 +1,7 @@
 # Sysinfo
 
 [![Build Status](https://github.com/AstroProfundis/sysinfo/actions/workflows/go.yml/badge.svg)](https://github.com/AstroProfundis/sysinfo/actions/workflows/go.yml)
-[![Go Report Card](https://goreportcard.com/badge/github.com/zcalusic/sysinfo)](https://goreportcard.com/report/github.com/zcalusic/sysinfo)
+[![Go Report Card](https://goreportcard.com/badge/github.com/AstroProfundis/sysinfo)](https://goreportcard.com/report/github.com/AstroProfundis/sysinfo)
 [![GoDoc](https://godoc.org/github.com/AstroProfundis/sysinfo?status.svg)](https://godoc.org/github.com/AstroProfundis/sysinfo)
 [![License](https://img.shields.io/badge/license-MIT-a31f34.svg?maxAge=2592000)](https://github.com/AstroProfundis/sysinfo/blob/master/LICENSE)
 [![Powered by](https://img.shields.io/badge/powered_by-Go-5272b4.svg?maxAge=2592000)](https://go.dev/)

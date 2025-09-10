@@ -26,6 +26,7 @@ func spewFile(path string, data string, perm os.FileMode) {
 	_ = os.WriteFile(path, []byte(data+"\n"), perm)
 }
 
+// SlurpFile exports the internal function
 func SlurpFile(path string) string {
 	return slurpFile(path)
 }
