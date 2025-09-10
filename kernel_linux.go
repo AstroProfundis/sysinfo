@@ -6,7 +6,8 @@
 //go:build !darwin && !freebsd && !windows
 // +build !darwin,!freebsd,!windows
 
-//+build linux
+//go:build linux
+// +build linux
 
 package sysinfo
 

@@ -5,7 +5,7 @@
 package sysinfo
 
 import (
-	"io/ioutil"
+	"io"
 	"net"
 	"os"
 	"path"
@@ -122,7 +122,7 @@ func readIfaceSpeed(file string) (speed uint) {
 		return
 	}
 	defer f.Close()
-	if b, err := ioutil.ReadAll(f); err == nil {
+	if b, err := io.ReadAll(f); err == nil {
 		if s, err := strconv.Atoi(strings.TrimSpace(string(b))); err == nil && s > 0 {
 			speed = uint(s)
 		}
@@ -132,7 +132,7 @@ func readIfaceSpeed(file string) (speed uint) {
 
 func (si *SysInfo) getNetworkInfo() {
 	sysClassNet := "/sys/class/net"
-	devices, err := ioutil.ReadDir(sysClassNet)
+	devices, err := os.ReadDir(sysClassNet)
 	if err != nil {
 		return
 	}

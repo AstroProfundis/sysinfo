@@ -8,6 +8,7 @@ import (
 	"bytes"
 	"encoding/binary"
 	"io/ioutil"
+	"os"
 	"strconv"
 )
 
@@ -40,7 +41,7 @@ func (si *SysInfo) getMemoryInfo() {
 		si.Memory.Swap = uint(swapSize) / 1024
 	}
 
-	dmi, err := ioutil.ReadFile("/sys/firmware/dmi/tables/DMI")
+	dmi, err := os.ReadFile("/sys/firmware/dmi/tables/DMI")
 	if err != nil {
 		// Xen hypervisor
 		if targetKB := slurpFile("/sys/devices/system/xen_memory/xen_memory0/target_kb"); targetKB != "" {
